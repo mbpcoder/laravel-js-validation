@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validator Demo</title>
+    <script src="Validator.js"></script>
+    <script>
+        var validation = new Validator({
+            data: {
+                'name': 'ali',
+                email : 'asd@asd'
+            },
+            rules: {
+                name: 'required|max:2',
+                age: 'min:20',
+                email: 'required|email'
+            }
+        });
+
+        if (validation.fails()) {
+            console.log(validation.getErrors());
+            console.log(validation.getFirstError('email'))
+        }
+
+    </script>
+    <script src="Validator.js"></script>
+</head>
+<body>
+
+</body>
+</html>
